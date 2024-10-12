@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap");
+
+// Importă fonturile "Roboto", "Open Sans" și "Nunito" de la Google Fonts, cu diferite greutăți (300, 400, 500, 700).
+
+:root {
+  --primary-color: #4154f1;
+  --secondary-color: #717ff5;
+  --bg-color: #f6f9ff;
+  scroll-behavior: smooth;
+}
+
+// Setează variabile CSS pentru culori (culori primare, secundare și culoarea de fundal) și
+//activează comportamentul smooth scrolling.
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Resetează marginile și padding-ul la toate elementele și setează box-sizing pentru a include padding-ul și
+// border-ul în dimensiunile totale.
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+  background-color: var(--bg-color);
+}
+
+// Setează fontul principal al corpului paginii ca fiind "Open Sans", culoarea textului #444444 și
+// fundalul conform variabilei definite.
+
+.MuiListItemButton-root {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  min-height: 36px !important;
+}
+
+// Stilizează elementele buton de listă din material-ui, adăugând padding și setând înălțimea minimă.
+
+.sidebar {
+  width: 200px;
+
+  // Setează lățimea sidebar-ului la 200px.
+
+  > .MuiList-root > .MuiListItemButton-root {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    min-height: 56px !important;
+    margin-bottom: 10px !important;
+  }
+
+  // Stilizează butoanele de meniu principale din sidebar, mărind padding-ul superior și inferior, setând înălțimea minimă la 56px și adăugând un spațiu între ele de 10px.
+
+  .MuiCollapse-root .MuiListItemButton-root {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    min-height: 36px !important;
+  }
+
+  // Stilizează butoanele din submeniuri, setând padding-ul și înălțimea minimă mai mici (pentru a diferenția de meniurile principale).
+
+  .MuiCollapse-root .MuiList-root {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Elimină padding-ul suplimentar în lista submeniurilor.
+}
+
+// Stilizează linkurile (<a>)
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// Setează culoarea linkurilor conform culorii primare și elimină sublinierea implicită, activând cursorul pointer pentru indicare.
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+// Schimbă culoarea linkurilor la hover, utilizând culoarea secundară, păstrând totodată textul fără subliniere.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+// Setează fontul pentru toate titlurile (h1-h6) la "Nunito".
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+// Setează containerul principal al aplicației să folosească flexbox, cu direcție pe coloană și
+//înălțime pe toată fereastra (100vh).
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  margin-top: 64px;
+}
+
+// Wrapper-ul pentru conținut, folosește flexbox, ocupă tot spațiul disponibil și
+//adaugă un margin-top de 64px (probabil pentru a compensa un header de aceeași înălțime).
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+// Setează containerul de conținut să ocupe tot spațiul disponibil în direcția principală (flex: 1),
+//adaugă padding intern de 20px, margină stânga 0 și o tranziție lină pentru margin-left pe 0.3 secunde.
+
+.sidebar-open .content {
+  margin-left: 335px;
+}
+
+// Când sidebar-ul este deschis, conținutul primește o margine stânga de 335px, probabil pentru a lăsa loc sidebar-ului.
+
+@media (max-width: 768px) {
+  .sidebar-open .content {
+    margin-left: 0;
+  }
+}
+
+// În cazul ecranelor cu lățimea mai mică de 768px (dispozitive mobile),
+//sidebar-ul nu mai afectează margin-left, adică conținutul ocupă întregul ecran.
